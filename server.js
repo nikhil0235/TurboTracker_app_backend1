@@ -17,8 +17,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors());
 
+app.use(cors({
+  credentials: true,
+  origin: '*', // Set this to the specific frontend URL or '*' for any URL
+}));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes Middleware
