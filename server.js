@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 app.use(cors({
   credentials: true,
-  origin: 'https://turbo-tracker-app-frontend.vercel.app', // Remove the trailing slash
+  origin: ["http://localhost:3000",'https://turbo-tracker-app-frontend.vercel.app'], // Remove the trailing slash
 }));
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
