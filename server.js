@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["https://turbotracker.vercel.app/"],
+    origin: ["https://turbotracker1.netlify.app/"],
     credentials: true,
   })
 );
