@@ -2,7 +2,6 @@ const dotenv = require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const cors = require("cors");
 const userRoute = require("./routes/userRoute");
 const productRoute = require("./routes/productRoute");
 const contactRoute = require("./routes/contactRoute");
@@ -18,11 +17,14 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(cors({
-  credentials: true,
-  origin: ["http://localhost:3000",'https://turbo-tracker-app-frontend.vercel.app'], // Remove the trailing slash
-}));
+const cors = require('cors');
 
+const corsOptions = {
+  origin: ['http://localhost:3000', 'https://turbo-tracker-app-frontend.vercel.app'],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes Middleware
