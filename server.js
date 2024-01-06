@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 const cors = require('cors');
 
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://turbo-tracker-app-frontend.vercel.app'],
+  origin: ['http://localhost:3000', 'https://turbo-tracker-app-frontend.vercel.app','https://turbotracker1.netlify.app/'],
   credentials: true,
 };
 
